@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobourai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 16:13:15 by yobourai          #+#    #+#             */
-/*   Updated: 2023/10/22 17:47:24 by yobourai         ###   ########.fr       */
+/*   Created: 2023/10/23 12:10:37 by yobourai          #+#    #+#             */
+/*   Updated: 2023/10/23 17:45:34 by yobourai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 #include <string.h>
-int ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
 		int i;
+		int j;
+
 		i=0;
-	while(s1[i] != '\0' && s2[i] != '\0')
-	{
-			if(s1[i] != s2[i])
-			{	
-				break ;
-			}
+		j=0;
+
+		while(dest[i]!= '\0')
+		{
 			i++;
-	}
-		return s1[i] - s2[i];
+		}
+		while(src[j]!= '\0')
+		{
+			dest[i]= src[j];		
+				j++;
+				i++;
+			
+		}
+			dest[i]= '\0';
+		return (dest);
 }
 /*
 int main ()
 {
-		char s1[]="aaa";
-		char s2[]="a";
-		ft_strcmp(s1 ,s2);
-		printf("%d" , strcmp(s1,s2));
+	char src[]=" youness";
+	char dest[]=" messi";
+	printf("%s", ft_strcat(dest , src));
+
 }*/

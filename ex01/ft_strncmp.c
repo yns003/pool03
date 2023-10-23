@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobourai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 16:13:15 by yobourai          #+#    #+#             */
-/*   Updated: 2023/10/22 17:47:24 by yobourai         ###   ########.fr       */
+/*   Created: 2023/10/22 17:45:16 by yobourai          #+#    #+#             */
+/*   Updated: 2023/10/23 12:09:36 by yobourai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-int ft_strcmp(char *s1, char *s2)
+int ft_strncmp( char *s1,  char *s2, unsigned int  n)
 {
-		int i;
-		i=0;
-	while(s1[i] != '\0' && s2[i] != '\0')
-	{
-			if(s1[i] != s2[i])
-			{	
-				break ;
-			}
-			i++;
-	}
-		return s1[i] - s2[i];
+
+    unsigned int i;
+    i=0;
+		if(n == 0)
+			return (0) ;
+    while (s1[i] == s2[i] && s1[i] !='\0' && s2[i] != '\0' && i < n )
+		i++;
+		if(i == n)
+		i--;
+	return (s1[i] - s2[i]) ;
 }
 /*
-int main ()
+int main()
 {
-		char s1[]="aaa";
-		char s2[]="a";
-		ft_strcmp(s1 ,s2);
-		printf("%d" , strcmp(s1,s2));
+  printf("%d", ft_strncmp("messi","messi",5));
 }*/
