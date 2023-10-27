@@ -6,23 +6,24 @@
 /*   By: yobourai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:13:15 by yobourai          #+#    #+#             */
-/*   Updated: 2023/10/22 17:47:24 by yobourai         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:57:32 by yobourai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-int ft_strcmp(char *s1, char *s2)
+
+int	ft_strcmp(char *s1, char *s2)
 {
-		int i;
-		i=0;
-	while(s1[i] != '\0' && s2[i] != '\0')
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-			if(s1[i] != s2[i])
-			{	
-				break ;
-			}
-			i++;
+		if (s1[i] != s2[i])
+		{
+			break ;
+		}
+		i++;
 	}
-		return s1[i] - s2[i];
+	return (s1[i] - s2[i]);
 }
 /*
 int main ()

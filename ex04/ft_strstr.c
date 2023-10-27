@@ -1,44 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobourai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 17:04:33 by yobourai          #+#    #+#             */
-/*   Updated: 2023/10/25 10:19:36 by yobourai         ###   ########.fr       */
+/*   Created: 2023/10/24 19:04:10 by yobourai          #+#    #+#             */
+/*   Updated: 2023/10/24 19:06:08 by yobourai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strstr(char *str, char *to_find)
+
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	n;
+	int	j;
+	int	i;
 
-	i = 0;
+	n = 0;
+	while (to_find[n] != '\0')
+		n++;
+	if (n == 0)
+		return (str);
 	j = 0;
-	while (dest[i] != '\0')
+	while (str[j] != '\0')
 	{
-		i++;
-	}
-	while (src[j] != '\0' && j < nb)
-	{
-		dest[i] = src[j];
-		i++;
+		i = 0;
+		while (str[j + i] == to_find[i])
+		{
+			i++;
+			if (i == n)
+				return (&str[j]);
+		}
 		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 /*
-int main ()
+int	main(void)
 {
-	int nb = 13;
-	char src[]=" youness";
-	char dest[]="messi";
-	printf("%s", ft_strncat(dest , src, nb));
+	char	str[] = "";
+	char	tofind[] = "";
 
+	printf("%s", ft_strstr(str, tofind));
 }*/
